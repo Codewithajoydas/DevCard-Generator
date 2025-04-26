@@ -1,7 +1,8 @@
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-  background-color: #f0f2f5;
+  background-color: #e9e9e99f;
+  user-select: none;
 }
 
 .container {
@@ -11,32 +12,52 @@ body {
 
 .header {
   padding: 1rem 2rem;
-  background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  margin-bottom: 1rem;
+  /* background-color: #ffffff; */
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); */
+  /* margin-bottom: 1rem; */
   text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .p {
   display: flex;
-  gap: 2rem;
+  gap:10px;
   padding: 2rem;
-  align-items: start;
+  border: 1px solid rgba(0, 0, 0, 0.295);
+  align-items: center;
   flex-wrap: wrap;
+  background: #ffffff;
+  border-radius: 10px;
+  justify-content: center;
 }
 
 .first,
 .second {
   flex: 1;
   min-width: 300px;
+  /* background: #000; */
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
 }
+
+.first{
+  width: 200px !important;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+}
+
 
 input {
   margin-bottom: 1rem;
   padding: 0.6rem;
   border-radius: 6px;
   border: 1px solid #ccc;
-  width: 100%;
+  width: 300px;
+  height: 40px;
 }
 
 label {
@@ -46,16 +67,23 @@ label {
 }
 
 .card {
-  background: white;
+  background: rgba(0, 0, 0, 0.932);
   padding: 1.5rem;
+  width: 300px;
+  /* border: 12px solid white; */
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
+  color: white;
+  line-height: .5;
 }
 
 .card img {
   border-radius: 50%;
   margin-bottom: 1rem;
+  width: 100px !important;
+  height: 100px !important;
+  background-size: contain;
 }
 
 .skills-chip {
@@ -67,17 +95,20 @@ label {
 }
 
 .chip {
-  background-color: #e0e0e0;
-  padding: 5px 10px;
+  background-color: #ffffff1a;
+  padding: 15px 20px;
   border-radius: 16px;
+  border: 2px solid rgb(138, 138, 138);
   font-size: 0.8rem;
 }
 
 button {
-  background-color: #4f46e5;
+  background-color: #000000;
   color: white;
   border: none;
-  padding: 0.6rem 1.2rem;
+  /* padding:10px 30px; */
+  height: 50px;
+  width: 200px;
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
@@ -104,4 +135,25 @@ button:disabled {
   100% {
     background-position: 100%;
   }
+}
+.links-logo{
+width: 100%;
+display: flex;
+justify-content: center;
+gap: 10px;
+align-items: center;
+}
+.links-logo a{
+  width: 40px;
+  height: 40px;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  font-size: large;
+}
+
+a{
+  text-decoration: none;
 }

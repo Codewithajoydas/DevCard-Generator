@@ -8,7 +8,7 @@ function App() {
   const [skills, setSkills] = useState("");
   const [links, setLinks] = useState("");
   const [img, setImg] = useState(
-    "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
+    "https://th.bing.com/th/id/OIP.Xk4cqWGuDHJK-zszSsV23QHaJe?w=184&h=236&c=7&r=0&o=5&cb=iwc1&pid=1.7"
   );
   const [isDownloading, setIsDownloading] = useState(false);
 
@@ -16,6 +16,12 @@ function App() {
     .split(",")
     .map((s) => s.trim())
     .filter(Boolean);
+
+  const linkList = links
+    .split(",")
+    .map((link) => link.trim())
+    .filter(Boolean);
+
   const cardRef = useRef(null);
 
   const downloadImage = () => {
@@ -36,9 +42,8 @@ function App() {
     <div className="container">
       <header className="header">
         <h2>🚀 DevCard Generator</h2>
-        <p>Create a beautiful developer card with your info!</p>
         <button onClick={downloadImage} disabled={isDownloading}>
-          {isDownloading ? "⏳ Downloading..." : "📥 Download Card"}
+          {isDownloading ? "Downloading..." : "Download Card"}
         </button>
         {isDownloading && <div className="progress-bar"></div>}
       </header>
@@ -69,10 +74,10 @@ function App() {
             onChange={(e) => setSkills(e.target.value)}
           />
 
-          <label htmlFor="links">Links</label>
+          <label htmlFor="links">Links (comma-separated)</label>
           <input
-            type="url"
-            placeholder="https://yourportfolio.com"
+            type="text"
+            placeholder="https://github.com/you, https://linkedin.com/in/you"
             id="links"
             onChange={(e) => setLinks(e.target.value)}
           />
@@ -81,8 +86,8 @@ function App() {
         <div className="second">
           <div className="card" ref={cardRef}>
             <img src={img} alt="Profile" width={100} height={100} />
-            <h1>{name || "Your Name"}</h1>
-            <h4>{title || "Your Title"}</h4>
+            <h2>{name || "Your Name"}</h2>
+            <h4 style={{ color: "gray" }}>{title || "Your Title"}</h4>
 
             <p>
               <strong>Skills:</strong>
@@ -100,8 +105,39 @@ function App() {
             </div>
 
             <p>
-              <strong>Links:</strong> {links || "https://yourportfolio.com"}
+              <strong>Links:</strong>
             </p>
+            <div className="links-logo">
+              {linkList.length > 0 ? (
+                linkList.map((link, index) => {
+                  let logo = "🌐"; // default logo
+                  if (link.includes("github.com")) {
+                    logo = "🐙";
+                  } else if (link.includes("linkedin.com")) {
+                    logo = "💼";
+                  } else if (link.includes("twitter.com")) {
+                    logo = "🐦";
+                  } else if (link.includes("facebook.com")) {
+                    logo = "📘";
+                  } else if (link.includes("gmail.com")) {
+                    logo = "✉️";
+                  }
+                  return (
+                    <a
+                      key={index}
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="logo-link"
+                    >
+                      {logo}
+                    </a>
+                  );
+                })
+              ) : (
+                <span>🌐</span>
+              )}
+            </div>
           </div>
         </div>
       </div>
