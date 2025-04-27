@@ -2,7 +2,8 @@
 
 Create beautiful, customizable portfolio cards that showcase your developer identity. Perfect for GitHub READMEs, portfolios, or sharing with your network!
 
-![DevCard Preview](preview.png)
+![image](https://github.com/user-attachments/assets/59eb4be6-8920-42d2-bcec-93b447cd2798)
+
 
 ---
 
@@ -20,7 +21,7 @@ Create beautiful, customizable portfolio cards that showcase your developer iden
 
 | Light Theme | Dark Theme |
 |-------------|------------|
-| ![Light](screenshots/light.png) | ![Dark](screenshots/dark.png) |
+|![image](https://github.com/user-attachments/assets/758d8454-dede-47d6-94d9-331881e53736) | ![Dark](screenshots/dark.png) |
 
 ---
 
